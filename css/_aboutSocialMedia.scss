@@ -1,0 +1,61 @@
+.about-social-media-link {
+    margin: auto;
+    transition: 700ms;
+    max-width: 65%;
+
+    ul {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding-top: 1em;
+    }
+
+    li {
+        list-style: none;
+        margin: .5em 1em;
+        @include flex;
+    }
+
+    .social {
+        text-decoration: none;
+        min-width: 5rem;
+        color: #aaa;
+        transition: 500ms;
+
+        &:hover {
+            color: var(--text-color);
+        }
+    }
+
+    svg {
+        width: 3rem;
+    }
+}
+
+#instagram > .social:hover {
+    color: #c7017d;
+}
+
+#linkedin > .social:hover {
+    color: #1161c2;
+}
+
+#youtube {
+    svg {
+        width: 4rem;
+    }
+
+    & > .social:hover {
+        color: red;
+    }
+}
+
+#twitter {
+    svg {
+        width: 3.5rem;
+    }
+    
+    & > .social:hover {
+        color: #1c9bef;
+    }
+}
