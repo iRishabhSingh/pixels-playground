@@ -4,6 +4,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
 }
 
 :root {
@@ -105,9 +108,6 @@ label {
   padding: 7.5px;
   border: 2px solid var(--color-theme);
   border-radius: 10px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-       user-select: none;
   transition: 500ms;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
@@ -263,7 +263,6 @@ label:hover {
   cursor: pointer;
   display: block;
   padding: 0.5em;
-  min-height: auto;
   max-height: none;
 }
 
@@ -372,9 +371,6 @@ label:hover {
 }
 
 .btn {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
   display: flex;
   align-items: center;
   justify-content: center;
