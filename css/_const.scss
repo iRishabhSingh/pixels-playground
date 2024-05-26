@@ -13,14 +13,14 @@ a {
 
 /* Input Element of type Checkbox 
 applying CSS to make it look like toggle button
-on adding | .toggleSwitch | class */
-.toggleSwitch {
+on adding | .toggle-switch | class */
+.toggle-switch {
   position: relative;
   cursor: pointer;
   width: 35px;
   height: 20px;
   appearance: none;
-  background-color: #1a6ea770;
+  background-color: var(--color-theme);
   outline-style: none;
   outline-color: transparent;
   margin-left: 5px;
@@ -31,12 +31,14 @@ on adding | .toggleSwitch | class */
   &:checked {
     background-color: var(--color-theme);
     transition: background-color 800ms ease-in-out;
+
     &::before {
       left: 15px;
       box-shadow: -0.1px 0 5px #000000c0;
-      background-color: #f5f5f5;
+      background-color: var(--background-color-rev);
     }
   }
+
   &::before {
     content: "";
     position: absolute;
@@ -45,7 +47,7 @@ on adding | .toggleSwitch | class */
     top: 0;
     left: 0;
     border-radius: 50%;
-    border: 5px solid #f5f5f5;
+    border: 5px solid #fff;
     transform: scale(0.75);
     transition: 600ms;
   }
@@ -56,14 +58,17 @@ on adding | .toggleSwitch | class */
   width: 2px;
   background-color: transparent;
   border: transparent;
+
   &:horizontal {
     height: 2px;
   }
 }
+
 ::-webkit-scrollbar-thumb {
   width: 2px;
-  background-color: #f5f5f540;
+  background-color: var(--text-color-opac);
   border-radius: 10px;
+
   &:horizontal {
     height: 2px;
   }
@@ -73,10 +78,10 @@ on adding | .toggleSwitch | class */
 label {
   @include flex;
   justify-content: space-between;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   margin: 15px auto;
   padding: 7.5px;
-  border: 2px solid #3b73ac;
+  border: 2px solid var(--color-theme);
   border-radius: 10px;
   -webkit-user-select: none;
   user-select: none;
@@ -85,12 +90,12 @@ label {
     "Lucida Sans", Arial, sans-serif;
 
   &:hover {
-    border-color: #ff5017a0;
+    border-color: var(--text-color);
   }
 }
 
 /* Default Btn Change */
-.customBtn {
+.custom-btn {
   background-color: transparent;
   background: none;
   border: none;

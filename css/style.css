@@ -7,14 +7,14 @@
 }
 
 :root {
-  --background-color: #0f1f2a;
-  --background-color-rev: #f5f5f5;
-  --nav-background: #ffffff09;
-  --text-color: whitesmoke;
-  --text-color-opac: #f5f5f5a0;
-  --footer-text: #f5f5f580;
-  --color-theme: #ff5017;
-  --green: #00e444;
+  --background-color: #333;
+  --background-color-rev: #f4f4f4;
+  --nav-background: #222;
+  --text-color: #f4f4f4;
+  --text-color-opac: #ccc;
+  --footer-text: #ccc;
+  --color-theme: #4caf50;
+  --green: #4caf50;
 }
 
 html {
@@ -36,8 +36,8 @@ a {
 
 /* Input Element of type Checkbox 
 applying CSS to make it look like toggle button
-on adding | .toggleSwitch | class */
-.toggleSwitch {
+on adding | .toggle-switch | class */
+.toggle-switch {
   position: relative;
   cursor: pointer;
   width: 35px;
@@ -45,7 +45,7 @@ on adding | .toggleSwitch | class */
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background-color: rgba(26, 110, 167, 0.4392156863);
+  background-color: var(--color-theme);
   outline-style: none;
   outline-color: transparent;
   margin-left: 5px;
@@ -53,16 +53,16 @@ on adding | .toggleSwitch | class */
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1254901961);
   transition: 550ms;
 }
-.toggleSwitch:checked {
+.toggle-switch:checked {
   background-color: var(--color-theme);
   transition: background-color 800ms ease-in-out;
 }
-.toggleSwitch:checked::before {
+.toggle-switch:checked::before {
   left: 15px;
   box-shadow: -0.1px 0 5px rgba(0, 0, 0, 0.7529411765);
-  background-color: #f5f5f5;
+  background-color: var(--background-color-rev);
 }
-.toggleSwitch::before {
+.toggle-switch::before {
   content: "";
   position: absolute;
   width: 20px;
@@ -70,7 +70,7 @@ on adding | .toggleSwitch | class */
   top: 0;
   left: 0;
   border-radius: 50%;
-  border: 5px solid #f5f5f5;
+  border: 5px solid #fff;
   transform: scale(0.75);
   transition: 600ms;
 }
@@ -87,7 +87,7 @@ on adding | .toggleSwitch | class */
 
 ::-webkit-scrollbar-thumb {
   width: 2px;
-  background-color: rgba(245, 245, 245, 0.2509803922);
+  background-color: var(--text-color-opac);
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:horizontal {
@@ -100,10 +100,10 @@ label {
   align-items: center;
   justify-content: center;
   justify-content: space-between;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   margin: 15px auto;
   padding: 7.5px;
-  border: 2px solid #3b73ac;
+  border: 2px solid var(--color-theme);
   border-radius: 10px;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -112,11 +112,11 @@ label {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 label:hover {
-  border-color: rgba(255, 80, 23, 0.6274509804);
+  border-color: var(--text-color);
 }
 
 /* Default Btn Change */
-.customBtn {
+.custom-btn {
   background-color: transparent;
   background: none;
   border: none;
@@ -517,44 +517,38 @@ label:hover {
   color: #1c9bef;
 }
 
-.settingsPopup {
+.settings-popup {
   width: 100%;
   height: 100%;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.7529411765);
-  color: whitesmoke;
+  background-color: rgba(51, 51, 51, 0.5019607843);
+  color: var(--text-color);
   position: fixed;
   top: 0;
   z-index: 111;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
   display: none;
 }
 
-.settings-box {
+.settings-popup__box {
   width: 30rem;
   height: 40rem;
-  border: 0.05rem solid #fff;
+  border: 0.05rem solid var(--text-color);
   border-radius: 0.75rem;
-  background-color: #222;
+  background-color: var(--nav-background);
   position: relative;
 }
-.settings-box h1 {
+.settings-popup__box h1 {
   font-size: 3.5rem;
   font-weight: 700;
   text-align: center;
   margin-top: 0.25em;
   padding-bottom: 0.5rem;
-  border-bottom: 0.1rem solid #fff;
+  border-bottom: 0.1rem solid var(--text-color);
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-#closeSettings {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+.settings-popup__close-button {
   position: absolute;
   font-size: 2.2rem;
   cursor: pointer;
@@ -564,17 +558,14 @@ label:hover {
   height: 2.5rem;
   border: none;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   transition: 250ms;
 }
-#closeSettings:hover {
-  color: #222;
-  background-color: #ff5017;
+.settings-popup__close-button:hover {
+  color: var(--nav-background);
+  background-color: var(--color-theme);
 }
 
-.settingsContent {
+.settings-popup__content {
   width: 100%;
   height: 87%;
   padding: 1.5rem 1rem;
@@ -583,43 +574,47 @@ label:hover {
 
 .footer {
   width: 100%;
-  min-width: 375px;
-  -webkit-user-select: unset;
-     -moz-user-select: unset;
-          user-select: unset;
+  min-width: 320px;
   text-align: center;
   color: var(--footer-text);
   padding: 8px 0;
   font-size: 1.6rem;
   bottom: -7.5px;
-  cursor: default;
-  box-shadow: 0 -0.2px 0 0 var(--text-color);
+  border-top: 1px solid var(--nav-background);
 }
-.footer span {
+
+.footer__details {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 15px;
+}
+
+.footer__project {
   font-weight: 600;
   font-size: 18px;
 }
-.footer p {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-}
-.footer a {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  color: var(--footer-text);
-  transition: 300ms;
-  font-size: 14px;
-}
-.footer a:hover {
-  color: var(--text-color);
-}
-.footer strong {
+
+.footer__project-number {
   cursor: default;
   font-size: 22px;
-  transition: 300ms;
+  transition: color 300ms;
 }
-.footer strong:hover {
+
+.footer__project-number:hover {
   color: var(--text-color-opac);
+}
+
+.footer__copyright {
+  font-size: 14px;
+  margin: 0.5rem;
+}
+
+.footer__link {
+  color: var(--footer-text);
+  transition: color 300ms;
+  font-size: 14px;
+  padding: 0;
+}
+.footer__link:hover {
+  color: var(--text-color);
 }/*# sourceMappingURL=style.css.map */

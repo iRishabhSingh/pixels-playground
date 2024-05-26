@@ -472,20 +472,26 @@
       </div>
 
       <!-- Settings Popup -->
-      <div class="settingsPopup" id="settingsPopup">
-        <div class="settings-box">
-          <h1>Settings</h1>
-          <button id="closeSettings" onclick="closeSettings()">&times;</button>
-          <div class="settingsContent">
-            <label for="darkMode">
-              Dark Mode:
+      <div class="settings-popup" id="settingsPopup">
+        <div class="settings-popup__box">
+          <h1 class="settings-popup__title">Settings</h1>
+          <button
+            id="closeSettings"
+            class="settings-popup__close-button"
+            onclick="closeSettings()"
+          >
+            &times;
+          </button>
+          <div class="settings-popup__content">
+            <label class="settings-popup__dark-mode-label" for="darkMode">
+              Dark Mode
               <input
                 type="checkbox"
                 name="darkMode"
                 id="darkMode"
-                class="toggleSwitch"
-                onclick="toggleDarkMode()"
-                onkeydown="if(event.key === 'Enter' || event.key === ' ') { toggleDarkMode(); }"
+                class="settings-popup__toggle-switch toggle-switch"
+                onclick="switchTheme()"
+                onkeydown="if(event.key === ' ') { toggleDarkMode(); }"
                 checked
               />
             </label>
@@ -496,13 +502,18 @@
 
     <!-- Footer Div containing Project Details -->
     <footer class="footer">
-      <div class="footerDetails">
-        <span>JavaScript Project <strong>Number #2</strong></span>
-        <p>
-          Copyright © 2022 &nbsp; ◂|▸<a
+      <div class="footer__details">
+        <span class="footer__project">
+          <strong class="footer__project-number">#2</strong><br />
+          JavaScript Project
+        </span>
+        <p class="footer__copyright">
+          Copyright &copy; 2022 |
+          <a
             href="https://iRishabhSingh.vercel.app"
-            rel="noopener"
+            rel="noopener noreferrer"
             target="_blank"
+            class="footer__link"
             >iRishabhSingh.com</a
           >
         </p>

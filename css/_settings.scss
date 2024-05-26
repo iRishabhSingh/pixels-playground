@@ -1,22 +1,22 @@
-.settingsPopup {
+.settings-popup {
   width: 100%;
   height: 100%;
   align-items: center;
   justify-content: center;
-  background-color: #000000c0;
-  color: whitesmoke;
+  background-color: #33333380;
+  color: var(--text-color);
   position: fixed;
   top: 0;
   z-index: 111;
-  user-select: none;
   display: none;
 }
-.settings-box {
+
+.settings-popup__box {
   width: 30rem;
   height: 40rem;
-  border: 0.05rem solid #fff;
+  border: 0.05rem solid var(--text-color);
   border-radius: 0.75rem;
-  background-color: #222;
+  background-color: var(--nav-background);
   position: relative;
 
   h1 {
@@ -25,13 +25,13 @@
     text-align: center;
     margin-top: 0.25em;
     padding-bottom: 0.5rem;
-    border-bottom: 0.1rem solid #fff;
+    border-bottom: 0.1rem solid var(--text-color);
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
       sans-serif;
   }
 }
-#closeSettings {
-  user-select: none;
+
+.settings-popup__close-button {
   position: absolute;
   font-size: 2.2rem;
   cursor: pointer;
@@ -41,15 +41,15 @@
   height: 2.5rem;
   border: none;
   border-radius: 50%;
-  @include flex;
   transition: 250ms;
 
   &:hover {
-    color: #222;
-    background-color: #ff5017;
+    color: var(--nav-background);
+    background-color: var(--color-theme);
   }
 }
-.settingsContent {
+
+.settings-popup__content {
   width: 100%;
   height: 87%;
   padding: 1.5rem 1rem;

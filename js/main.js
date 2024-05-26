@@ -73,35 +73,3 @@ function pixelPlay(color) {
   var canvasResult = document.getElementById("canvasResult");
   printingCanvas();
 }
-// Dark Mode JS
-function toggleDarkMode() {
-  if (darkMode.value == "on") {
-    switchDarkMode();
-    darkMode.value = "off";
-  } else {
-    switchLightMode();
-    darkMode.value = "on";
-  }
-}
-let root = document.querySelector(":root");
-
-function switchDarkMode() {
-  let rootValue = getComputedStyle(root);
-  root.style.setProperty("--background-color", "#fff");
-  root.style.setProperty("--background-color-rev", "#0f1f2a");
-  root.style.setProperty("--nav-background", "#00000019");
-  root.style.setProperty("--text-color", "#222");
-  root.style.setProperty("--text-color-opac", "#555555a0");
-  root.style.setProperty("--footer-text", "#555");
-  root.style.setProperty("--color-theme", "#2c98f0");
-}
-function switchLightMode() {
-  let rootValue = getComputedStyle(root);
-  root.style.setProperty("--background-color", "#0f1f2a");
-  root.style.setProperty("--background-color-rev", "#f5f5f5");
-  root.style.setProperty("--nav-background", "#ffffff09");
-  root.style.setProperty("--text-color", "whitesmoke");
-  root.style.setProperty("--text-color-opac", "#f5f5f5a0");
-  root.style.setProperty("--footer-text", "#f5f5f580");
-  root.style.setProperty("--color-theme", "#ff5017");
-}
