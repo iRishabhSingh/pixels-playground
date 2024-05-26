@@ -238,31 +238,17 @@ label:hover {
   width: 30px;
 }
 
-.container {
-  min-height: 45rem;
-  min-width: 37.5rem;
-  justify-content: center;
-  align-items: center;
-}
-
-.main-body,
+.btn,
 .ans-body,
-.btn {
+.main-body {
   width: 60vw;
+  padding: 1em;
   min-width: 350px;
   max-width: 950px;
   max-height: 950px;
   margin: 20px auto;
-  border: 1rem solid var(--text-color-opac);
   border-radius: 1.5rem;
-  padding: 1em;
-}
-
-.btn {
-  cursor: pointer;
-  display: block;
-  padding: 0.5em;
-  max-height: none;
+  border: 1rem solid var(--text-color-opac);
 }
 
 .ans-body {
@@ -272,9 +258,9 @@ label:hover {
 
 .canvas-img,
 .canvas-result {
-  display: none;
-  margin: auto;
   width: 55vw;
+  margin: auto;
+  display: none;
   min-width: 310px;
   max-width: 830px;
   min-height: 310px;
@@ -282,9 +268,9 @@ label:hover {
 }
 
 #inputImg {
+  opacity: 0;
   width: 100%;
   height: 100%;
-  opacity: 0;
   position: absolute;
   top: 0;
   left: 0;
@@ -294,32 +280,44 @@ label:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: auto;
   position: relative;
-  margin: 20px auto;
-  background-color: transparent;
-  border: none;
   width: 100%;
-  min-width: 30rem;
   height: 100%;
+  border: none;
+  min-width: 30rem;
   min-height: 30rem;
+  background-color: transparent;
 }
 
 .upload-icon-btn {
-  border-radius: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 5rem;
   color: var(--text-color-opac);
 }
 .upload-icon-btn span {
   text-align: center;
-  font-size: 100%;
 }
 .upload-icon-btn span .img-tag {
-  color: var(--color-theme);
   opacity: 0.8;
-  font-size: 2.2rem;
   display: inline;
+  color: var(--color-theme);
+}
+
+.container {
+  min-height: 45rem;
+  min-width: 37.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  cursor: pointer;
+  display: block;
+  padding: 0.5em;
+  max-height: none;
 }
 
 .acc {

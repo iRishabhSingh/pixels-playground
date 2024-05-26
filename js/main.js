@@ -1,21 +1,36 @@
-let image;
-
 function uploadImg() {
-  var canvasImg = document.getElementById("canvasImg");
-  var filename = document.getElementById("inputImg");
-  image = new SimpleImage(filename);
-  canvasImg.className = "image";
-  image.maxWidth = "50rem";
-  image.drawTo(canvasImg);
-  inputImgLabel.style.height = "5rem";
-  inputImgLabel.style.minHeight = "0";
-  inputImgLabel.style.background = "var(--background-color-rev)";
-  ImgTAG.style.color = "var(--background-color)";
-  uploadIconBtn.style.color = "var(--background-color)";
-  canvasImg.style.display = "block";
-  mainBody.style.width = "fit-content";
-  ansBody.style.width = "fit-content";
-  ansBody.style.width = "fit-content";
+  const input = document.getElementById("inputImg");
+  const canvas = document.getElementById("canvasImg");
+  const ctx = canvas.getContext("2d");
+
+  const file = input.files[0];
+  const reader = new FileReader();
+
+  reader.onload = function (e) {
+    const img = new Image();
+    img.onload = function () {
+      const maxWidth = 0.6 * window.innerWidth;
+      const aspectRatio = img.width / img.height;
+      let newWidth = img.width;
+      let newHeight = img.height;
+
+      if (img.width > maxWidth) {
+        newWidth = maxWidth;
+        newHeight = maxWidth / aspectRatio;
+      }
+
+      canvas.style.display = "block";
+      canvas.width = newWidth;
+      canvas.height = newHeight;
+      ctx.drawImage(img, 0, 0, newWidth, newHeight);
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+
+  // styling css
+  inputImgLabel.style.minHeight = "5rem";
+  inputImgLabel.style.background = "var(--nav-background)";
 }
 
 // Default Code
