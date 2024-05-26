@@ -54,9 +54,7 @@
 
           <!-- App Name -->
           <span class="nav__logo" id="logo">
-            <a href="/projects/JavaScript/PixelsPlayGround/"
-              >Pixe<span class="nav__rocket">🚀</span>s</a
-            >
+            <a href="/">Pixe<span class="nav__rocket">🚀</span>s</a>
           </span>
         </div>
 
@@ -128,9 +126,9 @@
     <!-- Main Body -->
     <main class="container">
       <!-- Main Body |Pixel PlayGround| -->
-      <div class="mainBody" id="mainBody">
-        <canvas id="canvasImg"></canvas>
-        <label for="file" id="inputImgLabel">
+      <div class="main-body" id="mainBody">
+        <canvas id="canvasImg" class="canvas-img"></canvas>
+        <label for="file" id="inputImgLabel" class="input-img-label">
           <input
             type="file"
             name="inputImg"
@@ -138,19 +136,20 @@
             multiple="false"
             oninput="uploadImg()"
             accept=".jpeg, .png, .jpg, .svg"
+            class="input-img"
           />
-          <div class="uploadIconBtn" id="uploadIconBtn">
+          <div class="upload-icon-btn" id="uploadIconBtn">
             <span
               >Drag or Click here to Upload an
-              <p id="ImgTAG">*Image</p></span
+              <p id="ImgTAG" class="img-tag">*Image</p></span
             >
           </div>
         </label>
       </div>
 
       <!-- Result Body |Pixel PlayGround| -->
-      <div class="ansBody" id="ansBody">
-        <canvas id="canvasResult"></canvas>
+      <div class="ans-body" id="ansBody">
+        <canvas id="canvasResult" class="canvas-result"></canvas>
       </div>
 
       <!-- Buttons to Performs Different Actions in Different Sections -->
@@ -286,31 +285,30 @@
       </div>
 
       <!-- Thanks and Social Media Links -->
-      <div class="thanksGiving">
-        <svg
-          aria-hidden="true"
-          focusable="false"
-          data-prefix="fas"
-          data-icon="quote-left"
-          class="svg-inline--fa fa-quote-left fa-w-16"
-          role="img"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 512 512"
-        >
-          <path
-            d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
-          ></path></svg
-        >This is a single WebPage made with ❤️ for you all. Try playing with
-        IMAGES Pixels. With this project I was learning JavaScript and Image
-        manipulation. To check the code you can visit to my
-        <a
-          target="_blank"
-          href="https://github.com/iRishabhSingh/projects/tree/main/JavaScript/PixelsPlayGround"
-          >GitHub Repo</a
-        >, fork the code and feel free to edit it if you have a better design or
-        code to do the same and if you loved my work in this project consider
-        checking other projects and please show some support.
-        <em>--- Rishabh Singh</em>
+      <div class="acc acc--container">
+        <p class="acc__content">
+          <span class="acc__quoteIcon" aria-hidden="true">&ldquo;</span>
+          Welcome to a unique web experience crafted with
+          <span class="heart">❤️</span> just for you. Explore the interplay of
+          pixels within images as you interact with this project. Through its
+          creation, I delved into the realms of JavaScript and image
+          manipulation, honing my skills along the way. <br /><br />
+          Curious about the inner workings? Dive into the code on my
+          <a
+            class="acc__link"
+            target="_blank"
+            rel="noopener"
+            href="https://github.com/iRishabhSingh/projects/tree/main/JavaScript/PixelsPlayGround"
+            >GitHub repository</a
+          >. Feel empowered to fork, modify, and enhance it to your heart's
+          content. Your creativity might unveil a better design or refine the
+          code further. <br /><br />
+          If this project resonates with you, why not extend your support?
+          Explore my other endeavors and join me on this journey of innovation
+          and exploration. Your encouragement fuels my passion for crafting
+          digital experiences that inspire.
+        </p>
+        <em class="acc__author">- Rishabh Singh</em>
       </div>
 
       <div class="about-social-media-link">

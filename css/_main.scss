@@ -1,132 +1,136 @@
 .container {
-    // height: 78.5vh;
-    min-height: 45rem;
-    min-width: 37.5rem;
-    // display: flex;
-    justify-content: center;
-    align-items: center;
-    // overflow-y: scroll;
-    // overflow-x: hidden;
+  min-height: 45rem;
+  min-width: 37.5rem;
+  justify-content: center;
+  align-items: center;
 }
-.mainBody,
-.ansBody,
+
+.main-body,
+.ans-body,
 .btn {
-    width: 60vw;
-    min-width: 350px;
-    max-width: 950px;
-    min-height: 350px;
-    max-height: 950px;
-    margin: 20px auto;
-    border: 1rem solid var(--text-color-opac);
-    border-radius: 1.5rem;
-    padding: 1em;
+  width: 60vw;
+  min-width: 350px;
+  max-width: 950px;
+  min-height: 350px;
+  max-height: 950px;
+  margin: 20px auto;
+  border: 1rem solid var(--text-color-opac);
+  border-radius: 1.5rem;
+  padding: 1em;
 }
+
 .btn {
-    cursor: pointer;
-    display: block;
-    padding: .5em;
-    min-height: auto;
-    max-height: none;
+  cursor: pointer;
+  display: block;
+  padding: 0.5em;
+  min-height: auto;
+  max-height: none;
 }
-.ansBody {
-    display: none;
-    text-align: center;
+
+.ans-body {
+  display: none;
+  text-align: center;
 }
-#canvasImg, #canvasResult {
-    display: none;
-    margin: auto;
-    width: 55vw;
-    min-width: 310px;
-    max-width: 830px;
-    min-height: 310px;
-    max-height: 830px;
+
+.canvas-img,
+.canvas-result {
+  display: none;
+  margin: auto;
+  width: 55vw;
+  min-width: 310px;
+  max-width: 830px;
+  min-height: 310px;
+  max-height: 830px;
 }
+
 #inputImg {
-    // display: none;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    // z-index: -999;
-}
-#inputImgLabel {
-    @include flex;
-    position: relative;
-    margin: 20px auto;
-    background-color: transparent;
-    border: none;
-    width: 100%;
-    min-width: 30rem;
-    height: 100%;
-    min-height: 30rem;
-}
-.uploadIconBtn {
-    border-radius: 5rem;
-    color: var(--text-color-opac);
-    @include flex;
-    span {
-        text-align: center;
-        font-size: 100%;
-        // z-index: -1;
-
-        p {
-            color: var(--color-theme);
-            opacity: .8;
-            font-size: 2.2rem;
-            display: inline;
-        }
-    }
+  // display: none;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  // z-index: -999;
 }
 
-.thanksGiving {
-    width: 65%;
-    min-width: 35rem;
-    max-width: 70rem;
-    padding: 1.5rem;
-    text-align: justify;
-    font-size: 2.2rem;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin: 2rem auto;
+.input-img-label {
+  @include flex;
+  position: relative;
+  margin: 20px auto;
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  min-width: 30rem;
+  height: 100%;
+  min-height: 30rem;
+}
 
-    svg {
-        width: 3rem;
-        fill: var(--text-color);
-        margin-right: 1.25rem;
-    }
-    a {
-        margin: 0;
-        padding: 0;
-        color: var(--color-theme);
-        transition: 300ms;
+.upload-icon-btn {
+  border-radius: 5rem;
+  @include flex;
+  color: var(--text-color-opac);
 
-        &:hover {
-            color: var(--text-color);
-        }
+  span {
+    text-align: center;
+    font-size: 100%;
+
+    .img-tag {
+      color: var(--color-theme);
+      opacity: 0.8;
+      font-size: 2.2rem;
+      display: inline;
     }
-    em {
-        display: block;
-        text-align: end;
-        font-size: 2.4rem;
+  }
+}
+
+.acc {
+  width: 65%;
+  min-width: 32rem;
+  max-width: 70rem;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: 2rem auto;
+
+  .acc__quoteIcon {
+    padding-right: 0.5rem;
+    font-size: x-large;
+  }
+
+  .acc__link {
+    margin: 0;
+    padding: 0;
+    color: var(--color-theme);
+    transition: 300ms;
+
+    &:hover {
+      color: var(--text-color);
     }
+  }
+
+  .acc__author {
+    display: block;
+    text-align: end;
+    font-size: 2rem;
+  }
 }
 
 .image {
-    border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 
 .download {
-    color: var(--text-color);
-    display: inline-flex;
-    align-items: center;
-    margin: 20px;
-    padding: .75rem 1.25rem;
-    border-radius: .5rem;
-    background-color: var(--green);
-    justify-content: center;
-    svg {
-        width: 2rem;
-        fill: var(--text-color);
-    }
+  color: var(--text-color);
+  display: inline-flex;
+  align-items: center;
+  margin: 20px;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  background-color: var(--green);
+  justify-content: center;
+  svg {
+    width: 2rem;
+    fill: var(--text-color);
+  }
 }

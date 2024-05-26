@@ -245,8 +245,8 @@ label:hover {
   align-items: center;
 }
 
-.mainBody,
-.ansBody,
+.main-body,
+.ans-body,
 .btn {
   width: 60vw;
   min-width: 350px;
@@ -267,12 +267,13 @@ label:hover {
   max-height: none;
 }
 
-.ansBody {
+.ans-body {
   display: none;
   text-align: center;
 }
 
-#canvasImg, #canvasResult {
+.canvas-img,
+.canvas-result {
   display: none;
   margin: auto;
   width: 55vw;
@@ -291,7 +292,7 @@ label:hover {
   left: 0;
 }
 
-#inputImgLabel {
+.input-img-label {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -305,52 +306,50 @@ label:hover {
   min-height: 30rem;
 }
 
-.uploadIconBtn {
+.upload-icon-btn {
   border-radius: 5rem;
-  color: var(--text-color-opac);
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--text-color-opac);
 }
-.uploadIconBtn span {
+.upload-icon-btn span {
   text-align: center;
   font-size: 100%;
 }
-.uploadIconBtn span p {
+.upload-icon-btn span .img-tag {
   color: var(--color-theme);
   opacity: 0.8;
   font-size: 2.2rem;
   display: inline;
 }
 
-.thanksGiving {
+.acc {
   width: 65%;
-  min-width: 35rem;
+  min-width: 32rem;
   max-width: 70rem;
-  padding: 1.5rem;
-  text-align: justify;
-  font-size: 2.2rem;
+  padding: 1.2rem;
+  font-size: 1.8rem;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   margin: 2rem auto;
 }
-.thanksGiving svg {
-  width: 3rem;
-  fill: var(--text-color);
-  margin-right: 1.25rem;
+.acc .acc__quoteIcon {
+  padding-right: 0.5rem;
+  font-size: x-large;
 }
-.thanksGiving a {
+.acc .acc__link {
   margin: 0;
   padding: 0;
   color: var(--color-theme);
   transition: 300ms;
 }
-.thanksGiving a:hover {
+.acc .acc__link:hover {
   color: var(--text-color);
 }
-.thanksGiving em {
+.acc .acc__author {
   display: block;
   text-align: end;
-  font-size: 2.4rem;
+  font-size: 2rem;
 }
 
 .image {
