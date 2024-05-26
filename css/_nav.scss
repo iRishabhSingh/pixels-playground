@@ -1,147 +1,123 @@
 .header {
-    min-width: 37.5rem;
-    background-color: var(--nav-background);
-    box-shadow: 0 0 .1em 0 var(--background-color);
-    user-select: none;
-    cursor: default;
+  min-width: 37.5rem;
+  background-color: var(--nav-background);
+  box-shadow: 0 0 0.1rem 0 var(--background-color);
 }
+
 .nav {
-    @include flex;
-    margin-left: 17em;
+  @include flex;
+  padding: 0.5rem 0;
+  margin-left: 17rem;
 }
-#backBtn {
-    width: 4.5rem;
-    height: 4.5rem;
-    border: .25em solid transparent;
-    position: absolute;
-    left: 0;
-    top: .75em;
-    margin: 0 2em;
-    margin-bottom: 0;
-    display: block;
-    border-radius: 50%;
-    transition: 300ms;
 
-    &:hover {
-        svg {
-            fill: var(--color-theme);
-        }
-    }
-    a {
-        padding: 0;
-    }
+.nav__branding {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 0;
+}
+
+.nav__back-btn {
+  margin: 0 2rem;
+  transition: 0.3s;
+
+  &:hover {
     svg {
-        display: block;
-        margin: .5em;
-        width: 2.5rem;
-        fill: var(--text-color);
-        transition: 550ms;
+      fill: var(--color-theme);
     }
-}
-#logo {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 2.8rem;
-    position: absolute;
-    left: 7.5rem;
-    top: 1.2rem;
+  }
 
-    a {
-        padding: 0;
-        font-weight: 600;
-        &::after {
-            content: 'PlayGround';
-            opacity: 0;
-            font-size: 1rem;
-            font-weight: normal;
-            transition: 500ms;
-            display: block;
-            text-align: end;
-            line-height: .15;
-        }
-        &:hover {
-            &::after {
-                opacity: 1;
-            }
-            span {
-                transform: rotate(0deg);
-                transition: 1s ease;
-            }
-        }
-        span {
-            display: inline-block;
-            transition: transform 1s ease;
-            transform: rotate(-45deg);
-            font-size: 2rem;
-        }
-    }
+  svg {
+    margin: 0.5rem;
+    width: 2.5rem;
+    fill: var(--text-color);
+    transition: 0.55s;
+  }
 }
-.nav-list {
-    display: flex;
-    overflow-x: scroll;
-    align-items: center;
-    &::-webkit-scrollbar {
-            background-color: transparent;
-    }
-    // &::-webkit-scrollbar-thumb {
-    //         background-color: transparent;
-    // }
-}
-.nav-items {
-    list-style: none;
-    padding: .4em 1em;
 
-    nobr {
-        font-size: 1.8rem;
-        cursor: pointer;
-        display: inline-flex;
-        align-items: center;
-        border: .25rem solid transparent;
-        color: var(--text-color);
-        word-wrap: none;
-        min-width: 100%;
-        transition: 350ms ease-in-out;
+.nav__logo {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 2.8rem;
 
-        &:hover {
-            border: .25rem solid var(--color-theme);
-        }
+  a {
+    padding: 0;
+    font-weight: 600;
+    color: var(--text-color);
+
+    &::after {
+      content: "PlayGround";
+      font-size: 1rem;
+      display: block;
+      text-align: end;
+      line-height: 0.15;
+      color: var(--text-color);
     }
+
+    span {
+      font-size: 2rem;
+      display: inline-block;
+      transform: rotate(0deg); // Make it permanent as per previous requirement
+    }
+  }
 }
-.nav-link {
-    outline-style: none;
-    outline-color: transparent;
-    padding: .75rem 1rem;
-    margin-top: .5em;
-    border-radius: 5rem;
+
+.nav__list {
+  display: flex;
+  overflow-x: scroll;
+  align-items: center;
+
+  &::-webkit-scrollbar {
+    background-color: transparent;
+  }
 }
-.selected-nav-option {
-    background: var(--color-theme) !important;
-    color: whitesmoke !important;
-    text-shadow: .3rem .3rem .3rem #333;
+
+.nav__item {
+  list-style: none;
+  padding: 0.4rem 1rem;
+
+  button {
+    cursor: pointer;
+    word-wrap: none;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    background-color: transparent;
+    border: 0.25rem solid transparent;
+    transition: 0.3s ease-in-out;
 
     &:hover {
-        border-color: var(--text-color) !important;
+      border-color: var(--color-theme);
     }
+  }
 }
-#settings {
-    width: 4rem;
-    height: 4rem;
-    list-style: none;
-    border-radius: .75rem;
-    margin: 0 2em;
-    cursor: pointer;
-    display: block;
-    margin-top: 1rem;
+
+.nav__link {
+  outline-style: none;
+  outline-color: transparent;
+  padding: 0.75rem 1rem;
+  border-radius: 5rem;
+}
+
+.nav__link--selected {
+  background: var(--color-theme) !important;
+  color: var(--text-color) !important;
+}
+
+.nav__settings {
+  margin: 0 1rem;
+  cursor: pointer;
+  list-style: none;
+  border-radius: 0.75rem;
+
+  button {
+    border: none;
+    background-color: transparent;
+
+    display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-theme);
+  }
 
-    nobr {
-        display: flex;
-        padding: .75em;
-    }
-    svg {
-        width: 2.5rem;
-        height: 2.5rem;
-        fill: white;
-    }
+  img {
+    width: 30px;
+  }
 }

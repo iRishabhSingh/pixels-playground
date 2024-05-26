@@ -1,22 +1,27 @@
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-@import './root';
-html {
-    font-size: 62.5%;
-}
-body {
-    font-family: 'system-ui';
-    background: var(--background-color);
-    color: var(--text-color);
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@import './const';
-@import './nav';
-@import './main';
-@import './mainBtns';
-@import './aboutSocialMedia';
-@import './settings';
-@import './footer';
+@import "./root";
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "system-ui";
+  color: var(--text-color);
+  background: var(--background-color);
+}
+
+@import "./const";
+@import "./nav";
+@import "./main";
+@import "./mainBtns";
+@import "./aboutSocialMedia";
+@import "./settings";
+@import "./footer";
