@@ -238,27 +238,37 @@ label:hover {
   width: 30px;
 }
 
+.container__img-div {
+  width: 60vw;
+  min-width: 350px;
+  max-width: 950px;
+  max-height: 950px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .btn,
 .ans-body,
 .main-body {
-  width: 60vw;
+  width: 28vw;
   padding: 1em;
   min-width: 350px;
   max-width: 950px;
   max-height: 950px;
-  margin: 20px auto;
+  margin: 20px 0;
   border-radius: 1.5rem;
   border: 1rem solid var(--text-color-opac);
 }
 
 .ans-body {
-  display: none;
   text-align: center;
 }
 
 .canvas-img,
 .canvas-result {
-  width: 55vw;
+  width: 26vw;
   margin: auto;
   display: none;
   min-width: 310px;
@@ -271,6 +281,7 @@ label:hover {
   opacity: 0;
   width: 100%;
   height: 100%;
+  cursor: pointer;
   position: absolute;
   top: 0;
   left: 0;
@@ -371,7 +382,9 @@ label:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 60vw;
   height: 4.5rem;
+  margin: 10px auto;
   border: none;
   padding: 0.5rem;
   font-size: 1.6rem;

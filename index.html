@@ -125,31 +125,33 @@
 
     <!-- Main Body -->
     <main class="container">
-      <!-- Main Body |Pixel PlayGround| -->
-      <div class="main-body" id="mainBody">
-        <canvas id="canvasImg" class="canvas-img"></canvas>
-        <label for="file" id="inputImgLabel" class="input-img-label">
-          <input
-            type="file"
-            name="inputImg"
-            id="inputImg"
-            multiple="false"
-            oninput="uploadImg()"
-            accept="image/*"
-            class="input-img"
-          />
-          <div class="upload-icon-btn" id="uploadIconBtn">
-            <span
-              >Drag or Click here to Upload an
-              <p id="ImgTAG" class="img-tag">*Image</p></span
-            >
-          </div>
-        </label>
-      </div>
+      <div class="container__img-div">
+        <!-- Main Body |Pixel PlayGround| -->
+        <div class="main-body" id="mainBody">
+          <canvas id="canvasImg" class="canvas-img"></canvas>
+          <label for="file" id="inputImgLabel" class="input-img-label">
+            <input
+              type="file"
+              name="inputImg"
+              id="inputImg"
+              multiple="false"
+              oninput="uploadImg()"
+              accept="image/*"
+              class="input-img"
+            />
+            <div class="upload-icon-btn" id="uploadIconBtn">
+              <span
+                >Drag or Click here to Upload an
+                <p id="ImgTAG" class="img-tag">*Image</p></span
+              >
+            </div>
+          </label>
+        </div>
 
-      <!-- Result Body |Pixel PlayGround| -->
-      <div class="ans-body" id="ansBody">
-        <canvas id="canvasResult" class="canvas-result"></canvas>
+        <!-- Result Body |Pixel PlayGround| -->
+        <div class="ans-body" id="ansBody">
+          <canvas id="canvasResult" class="canvas-result"></canvas>
+        </div>
       </div>
 
       <!-- Buttons to Performs Different Actions in Different Sections -->
@@ -175,6 +177,8 @@
           Paid.</span
         >
       </div>
+
+      <!-- Section to perform Black and White section -->
       <div class="btns" id="BnWBtnDiv">
         <button class="btn" id="BnWBtn" onclick="greyScale()">
           <svg
@@ -183,7 +187,6 @@
             data-prefix="fas"
             data-icon="images"
             class="svg-inline--fa fa-images fa-w-18"
-            role="img"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 576 512"
           >
@@ -194,6 +197,8 @@
           Black & White
         </button>
       </div>
+
+      <!-- Section to remove RGB's of every pixel of image section -->
       <div class="btns" id="RGBremoveDiv">
         <div>
           <button
@@ -216,6 +221,8 @@
           </button>
         </div>
       </div>
+
+      <!-- Section to add RGB's of every pixel of image -->
       <div class="btns" id="RGBscaleDiv">
         <div>
           <button
@@ -238,6 +245,8 @@
           </button>
         </div>
       </div>
+
+      <!-- Section to manipulate RGB's of every pixel of image -->
       <div class="btns" id="RGBplayDiv">
         <button class="btn" id="RGBplayBtn">
           <svg
@@ -246,7 +255,6 @@
             data-prefix="fas"
             data-icon="sliders-h"
             class="svg-inline--fa fa-sliders-h fa-w-16"
-            role="img"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"
           >
@@ -258,28 +266,34 @@
         </button>
         <div class="hiddenPlayGround">
           <input
+            title="redOfImage"
             type="range"
             name="redOfImage"
             min="0"
             max="255"
             id="redOfImage"
             onclick="pixelPlay('red')"
+            onkeydown=""
           />
           <input
+            title="greenOfImage"
             type="range"
             name="greenOfImage"
             min="0"
             max="255"
             id="greenOfImage"
             onclick="pixelPlay('green')"
+            onkeydown=""
           />
           <input
+            title="blueOfImage"
             type="range"
             name="blueOfImage"
             min="0"
             max="255"
             id="blueOfImage"
             onchange="pixelPlay('blue')"
+            onkeydown=""
           />
         </div>
       </div>
@@ -311,6 +325,7 @@
         <em class="acc__author">- Rishabh Singh</em>
       </div>
 
+      <!-- Social Media Links -->
       <div class="about-social-media-link">
         <ul>
           <li class="social-media" id="email">
@@ -325,7 +340,6 @@
                 data-prefix="fas"
                 data-icon="envelope"
                 class="svg-inline--fa fa-envelope fa-w-16"
-                role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
               >
@@ -348,7 +362,6 @@
                 data-prefix="fab"
                 data-icon="twitter"
                 class="svg-inline--fa fa-twitter fa-w-16"
-                role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
               >
@@ -371,7 +384,6 @@
                 data-prefix="fab"
                 data-icon="instagram"
                 class="svg-inline--fa fa-instagram fa-w-14"
-                role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 448 512"
               >
@@ -394,7 +406,6 @@
                 data-prefix="fab"
                 data-icon="github"
                 class="svg-inline--fa fa-github fa-w-16"
-                role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 496 512"
               >
@@ -417,7 +428,6 @@
                 data-prefix="fab"
                 data-icon="linkedin"
                 class="svg-inline--fa fa-linkedin fa-w-14"
-                role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 448 512"
               >
@@ -436,7 +446,6 @@
                 data-prefix="fab"
                 data-icon="youtube"
                 class="svg-inline--fa fa-youtube fa-w-18"
-                role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 576 512"
               >
@@ -455,7 +464,6 @@
                 data-prefix="fab"
                 data-icon="dev"
                 class="svg-inline--fa fa-dev fa-w-14"
-                role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 448 512"
               >

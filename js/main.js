@@ -9,7 +9,7 @@ function uploadImg() {
   reader.onload = function (e) {
     const img = new Image();
     img.onload = function () {
-      const maxWidth = 0.6 * window.innerWidth;
+      const maxWidth = 0.28 * window.innerWidth;
       const aspectRatio = img.width / img.height;
       let newWidth = img.width;
       let newHeight = img.height;
@@ -30,6 +30,7 @@ function uploadImg() {
 
   // styling css
   inputImgLabel.style.minHeight = "5rem";
+  inputImgLabel.style.maxHeight = "5rem";
   inputImgLabel.style.background = "var(--nav-background)";
 }
 
