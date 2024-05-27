@@ -223,12 +223,12 @@ label:hover {
 
 .nav__settings {
   margin: 0 1rem;
-  cursor: pointer;
   list-style: none;
   border-radius: 0.75rem;
 }
 .nav__settings button {
   border: none;
+  cursor: pointer;
   background-color: transparent;
   display: flex;
   align-items: center;
@@ -252,7 +252,7 @@ label:hover {
 .btn,
 .ans-body,
 .main-body {
-  width: 28vw;
+  width: 29.5vw;
   padding: 1em;
   min-width: 350px;
   max-width: 950px;

@@ -104,17 +104,15 @@
 
 .nav__settings {
   margin: 0 1rem;
-  cursor: pointer;
   list-style: none;
   border-radius: 0.75rem;
 
   button {
     border: none;
+    cursor: pointer;
     background-color: transparent;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex;
   }
 
   img {
