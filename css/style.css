@@ -4,9 +4,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-       user-select: none;
 }
 
 :root {
@@ -27,8 +24,8 @@ html {
 }
 
 body {
-  font-family: "system-ui";
   color: var(--text-color);
+  font-family: system-ui, sans-serif;
   background: var(--background-color);
 }
 
@@ -86,6 +83,7 @@ on adding | .toggle-switch | class */
   background-color: transparent;
   border: transparent;
 }
+
 ::-webkit-scrollbar:horizontal {
   height: 2px;
 }
@@ -95,6 +93,7 @@ on adding | .toggle-switch | class */
   background-color: var(--text-color-opac);
   border-radius: 10px;
 }
+
 ::-webkit-scrollbar-thumb:horizontal {
   height: 2px;
 }
@@ -120,7 +119,6 @@ label:hover {
 /* Default Btn Change */
 .custom-btn {
   background-color: transparent;
-  background: none;
   border: none;
   outline-style: none;
   outline-color: transparent;

@@ -71,7 +71,6 @@ function printingCanvas() {
     const downloadCanvas = document.createElement("canvas");
     downloadCanvas.width = image.getWidth();
     downloadCanvas.height = image.getHeight();
-    const ctx = downloadCanvas.getContext("2d");
     image.drawTo(downloadCanvas);
     const dataUrl = downloadCanvas.toDataURL("image/png");
     this.href = dataUrl;

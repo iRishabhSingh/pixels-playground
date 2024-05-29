@@ -58,20 +58,20 @@ on adding | .toggle-switch | class */
   width: 2px;
   background-color: transparent;
   border: transparent;
+}
 
-  &:horizontal {
-    height: 2px;
-  }
+::-webkit-scrollbar:horizontal {
+  height: 2px;
 }
 
 ::-webkit-scrollbar-thumb {
   width: 2px;
   background-color: var(--text-color-opac);
   border-radius: 10px;
+}
 
-  &:horizontal {
-    height: 2px;
-  }
+::-webkit-scrollbar-thumb:horizontal {
+  height: 2px;
 }
 
 /* label */
@@ -95,7 +95,6 @@ label {
 /* Default Btn Change */
 .custom-btn {
   background-color: transparent;
-  background: none;
   border: none;
   outline-style: none;
   outline-color: transparent;
