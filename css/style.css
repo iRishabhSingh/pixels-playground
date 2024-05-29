@@ -17,7 +17,9 @@
   --text-color-opac: #ccc;
   --footer-text: #ccc;
   --color-theme: #4caf50;
+  --red: #f44336;
   --green: #4caf50;
+  --blue: #2196f3;
 }
 
 html {
@@ -257,7 +259,7 @@ label:hover {
   min-width: 350px;
   max-width: 950px;
   max-height: 950px;
-  margin: 20px 0;
+  margin: 20px auto;
   border-radius: 1.5rem;
   border: 1rem solid var(--text-color-opac);
 }
@@ -269,7 +271,8 @@ label:hover {
 .canvas-img,
 .canvas-result {
   width: 26vw;
-  margin: auto;
+  margin: 0 auto 10px auto;
+  border-radius: 5px;
   display: none;
   min-width: 310px;
   max-width: 830px;
@@ -277,7 +280,7 @@ label:hover {
   max-height: 830px;
 }
 
-#inputImg {
+.input-img {
   opacity: 0;
   width: 100%;
   height: 100%;
@@ -301,6 +304,22 @@ label:hover {
   background-color: transparent;
 }
 
+.canvas-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 4.5rem;
+  border: none;
+  display: none;
+  border-radius: 1rem;
+  background-color: var(--nav-background);
+  color: var(--text-color-opac);
+}
+.canvas-btn svg {
+  fill: var(--text-color);
+}
+
 .upload-icon-btn {
   display: flex;
   align-items: center;
@@ -320,8 +339,8 @@ label:hover {
 .container {
   min-height: 45rem;
   min-width: 37.5rem;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .btn {
@@ -363,21 +382,6 @@ label:hover {
   border-radius: 0.5rem;
 }
 
-.download {
-  color: var(--text-color);
-  display: inline-flex;
-  align-items: center;
-  margin: 20px;
-  padding: 0.75rem 1.25rem;
-  border-radius: 0.5rem;
-  background-color: var(--green);
-  justify-content: center;
-}
-.download svg {
-  width: 2rem;
-  fill: var(--text-color);
-}
-
 .btn {
   display: flex;
   align-items: center;
@@ -415,57 +419,81 @@ label:hover {
 #removeBGDiv {
   display: flex;
 }
-#removeBGDiv span {
+
+.customBtns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  display: none;
+  width: 60vw;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.customBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15rem;
+  height: 4.5rem;
+  border: none;
+  margin: 10px 0;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  font-size: 1.6rem;
+  color: var(--text-color);
+  transition: background 0.5s;
+  background-color: var(--color-theme);
+}
+
+.remove-background__section {
+  display: flex;
+}
+.remove-background__section span {
   font-size: 115%;
   color: #f85959;
 }
-#removeBGDiv span::-moz-selection {
+.remove-background__section span::-moz-selection {
   color: var(--text-color);
   background-color: #f85959;
 }
-#removeBGDiv span::selection {
+.remove-background__section span::selection {
   color: var(--text-color);
   background-color: #f85959;
 }
 
-#removeBGBtn:hover {
+.remove-background__button:hover {
   border: 1px solid var(--color-theme);
 }
 
-#BnWBtn:hover {
+.black-and-white__button:hover {
   background: linear-gradient(-45deg, whitesmoke, #ccc, #333, black) !important;
   outline-offset: 0;
   outline-style: none;
   outline-color: transparent;
 }
 
-#RGBplayBtn:hover {
+.play-with-colors__button:hover {
   border: 1px solid var(--color-theme);
 }
-#RGBplayBtn svg {
-  width: 2rem;
+
+.red-of-rgb {
+  background-color: var(--red);
 }
 
-.optionBtn {
-  color: var(--text-color);
-  font-size: 1.8rem;
+.green-of-image {
+  background-color: var(--green);
 }
 
-.redOfRGB {
-  background-color: #f85959;
+.blue-of-rgb {
+  background-color: var(--blue);
 }
 
-.blueOfRGB {
-  background-color: #2c98f0;
-}
-
-.hiddenPlayGround input[type=range] {
+.hidden-playground input[type=range] {
   display: block;
   margin: 2rem auto;
   width: 50%;
-}
-.hiddenPlayGround #redOfImage {
-  background-color: #f85959;
 }
 
 .about-social-media-link {

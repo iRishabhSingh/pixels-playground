@@ -17,7 +17,7 @@
   min-width: 350px;
   max-width: 950px;
   max-height: 950px;
-  margin: 20px 0;
+  margin: 20px auto;
   border-radius: 1.5rem;
   border: 1rem solid var(--text-color-opac);
 }
@@ -29,7 +29,8 @@
 .canvas-img,
 .canvas-result {
   width: 26vw;
-  margin: auto;
+  margin: 0 auto 10px auto;
+  border-radius: 5px;
   display: none;
   min-width: 310px;
   max-width: 830px;
@@ -37,7 +38,7 @@
   max-height: 830px;
 }
 
-#inputImg {
+.input-img {
   opacity: 0;
   width: 100%;
   height: 100%;
@@ -58,6 +59,21 @@
   min-width: 30rem;
   min-height: 30rem;
   background-color: transparent;
+}
+
+.canvas-btn {
+  @include flex;
+  width: 100%;
+  height: 4.5rem;
+  border: none;
+  display: none;
+  border-radius: 1rem;
+  background-color: var(--nav-background);
+  color: var(--text-color-opac);
+
+  svg {
+    fill: var(--text-color);
+  }
 }
 
 .upload-icon-btn {

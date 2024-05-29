@@ -1,3 +1,7 @@
+let originalImage; // Global variable to hold the original SimpleImage object
+let image; // Global variable to hold the working SimpleImage object
+
+// Function to upload and display the image on canvas
 function uploadImg() {
   const input = document.getElementById("inputImg");
   const canvas = document.getElementById("canvasImg");
@@ -23,69 +27,115 @@ function uploadImg() {
       canvas.width = newWidth;
       canvas.height = newHeight;
       ctx.drawImage(img, 0, 0, newWidth, newHeight);
+
+      // Create a SimpleImage object from the uploaded image
+      originalImage = new SimpleImage(img);
+      image = new SimpleImage(img); // Make a copy for editing
     };
     img.src = e.target.result;
   };
   reader.readAsDataURL(file);
 
-  // styling css
+  // Styling CSS
+  const inputImgLabel = document.getElementById("inputImgLabel");
   inputImgLabel.style.minHeight = "5rem";
   inputImgLabel.style.maxHeight = "5rem";
   inputImgLabel.style.background = "var(--nav-background)";
 }
 
-// Default Code
-function printingCanvas() {
-  image.drawTo(canvasResult);
-  var filename = document.getElementById("inputImg");
-  image = new SimpleImage(filename);
-  ansBody.style.display = "block";
-  canvasResult.style.display = "block";
+// Function to reset the working image to the original
+function resetImage() {
+  if (originalImage) {
+    image = new SimpleImage(originalImage);
+  }
 }
 
-// Black and White JS
+// Function to print canvas
+function printingCanvas() {
+  if (!image) return; // Ensure the image is loaded
+
+  const canvasResult = document.getElementById("canvasResult");
+  const answerContainer = document.getElementById("ansBody");
+
+  image.drawTo(canvasResult); // Draw the image to the result canvas
+
+  // Show the result canvas and answer container
+  answerContainer.style.display = "block";
+  canvasResult.style.display = "block";
+
+  // Create a link element for downloading
+  const downloadLink = document.createElement("a");
+  downloadLink.textContent = "Download Edited Image";
+  downloadLink.href = "#"; // Set a placeholder href
+  downloadLink.addEventListener("click", function () {
+    const downloadCanvas = document.createElement("canvas");
+    downloadCanvas.width = image.getWidth();
+    downloadCanvas.height = image.getHeight();
+    const ctx = downloadCanvas.getContext("2d");
+    image.drawTo(downloadCanvas);
+    const dataUrl = downloadCanvas.toDataURL("image/png");
+    this.href = dataUrl;
+    this.download = "image.png";
+  });
+
+  // Append the download link to the answer container
+  const editedImgDownload = document.getElementById("editedImgDownload");
+  editedImgDownload.innerHTML = ""; // Clear previous content
+  editedImgDownload.appendChild(downloadLink);
+  editedImgDownload.style.display = "block";
+}
+
+// Function to apply grayscale filter
 function greyScale() {
-  if (inputImg.value == "") return;
-  for (var pixel of image.values()) {
-    var avg = pixel.getRed() + pixel.getGreen() + pixel.getBlue();
-    avg = avg / 3;
+  if (!originalImage) return;
+  resetImage(); // Reset to original before applying the filter
+  for (const pixel of image.values()) {
+    const avg = (pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3;
     pixel.setRed(avg);
     pixel.setGreen(avg);
     pixel.setBlue(avg);
   }
   printingCanvas();
 }
-// remove RGB form Image
+
+// Function to remove specific color channel
 function removeRGB(color) {
-  if (inputImg.value == "") return;
-  for (var pixel of image.values()) {
-    if (color == "red") pixel.setRed(0);
-    else if (color == "green") pixel.setGreen(0);
-    else if (color == "blue") pixel.setBlue(0);
+  if (!originalImage) return;
+  resetImage(); // Reset to original before applying the filter
+  for (const pixel of image.values()) {
+    if (color === "red") pixel.setRed(0);
+    else if (color === "green") pixel.setGreen(0);
+    else if (color === "blue") pixel.setBlue(0);
   }
   printingCanvas();
 }
-// Add RGB
+
+// Function to add specific color channel
 function rgbScale(color) {
-  if (inputImg.value == "") return;
-  for (var pixel of image.values()) {
-    if (color == "red") pixel.setRed(255);
-    else if (color == "green") pixel.setGreen(255);
-    else if (color == "blue") pixel.setBlue(255);
+  if (!originalImage) return;
+  resetImage(); // Reset to original before applying the filter
+  for (const pixel of image.values()) {
+    if (color === "red") pixel.setRed(255);
+    else if (color === "green") pixel.setGreen(255);
+    else if (color === "blue") pixel.setBlue(255);
   }
-  var canvasResult = document.getElementById("canvasResult");
   printingCanvas();
 }
-// PlayGround JS
+
+// Function to adjust pixel values
 function pixelPlay(color) {
-  if (inputImg.value == "") return;
-  for (let pixel of image.values()) {
-    if (color == "red") pixel.setRed(pixel.getRed - redOfImage.value);
-    else if (color == "green")
-      pixel.setGreen(Math.abs(pixel.getGreen - greenOfImage.value));
-    else if (color == "blue")
-      pixel.setBlue(Math.abs(pixel.getBlue - blueOfImage.value));
+  if (!originalImage) return;
+  resetImage(); // Reset to original before applying the filter
+  const redValue = parseInt(document.getElementById("redOfImage").value);
+  const greenValue = parseInt(document.getElementById("greenOfImage").value);
+  const blueValue = parseInt(document.getElementById("blueOfImage").value);
+
+  for (const pixel of image.values()) {
+    if (color === "red") pixel.setRed(Math.max(0, pixel.getRed() - redValue));
+    else if (color === "green")
+      pixel.setGreen(Math.max(0, pixel.getGreen() - greenValue));
+    else if (color === "blue")
+      pixel.setBlue(Math.max(0, pixel.getBlue() - blueValue));
   }
-  var canvasResult = document.getElementById("canvasResult");
   printingCanvas();
 }
